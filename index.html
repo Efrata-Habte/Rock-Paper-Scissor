@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/common.css">
 </head>
 <body>
     <section class="container">
@@ -12,8 +13,8 @@
         <img id="symbol" src="public/images/rock-paper-scissors (1).png" alt="Rock Paper Scissors">
         <h1 class="name">Rock Paper <br> Scissors</h1>
         <br>
-        <button class="menu" type="button"> Play</button> <br>
-        <button class="menu" type="button"> Help</button> <br>
+        <button id="playbtn" class="menu" type="button" > Play</button> <br>
+        <button id="helpbtn" class="menu" type="button"> Help</button> <br>
         <!-- <button class="menu" type="button"> Quit</button> <br> -->
 
     </section>
@@ -28,6 +29,13 @@
         </p>
     </footer>
 
-
+    <script>
+        document.getElementById("playbtn").onclick = function () {
+            location.href = "play.html";
+        };
+        document.getElementById("helpbtn").onclick = function () {
+            location.href = "help.html";
+        };
+    </script>
 </body>
 </html>
