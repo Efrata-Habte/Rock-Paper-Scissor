@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/play.css">
+</head>
+<body>
+    
+    <section class="container">
+        <div class="title">
+            <h1>Rock, Paper, Scissors</h1>
+            <p>Make your choice and play against the computer!</p>
+
+        </div>
+
+        <div class="round-info">
+            <p>How many rounds you want to play? </p>
+            <form action="">
+                <input type="radio" name="" value="3"> 3
+                <input type="radio" name="" value="5"> 5
+                <input type="radio" name="" value="7"> 7
+            </form>
+        </div>
+
+        <div class="score-board">
+            <div class="player-score">
+                <h2>You</h2>
+                <p id="player-score">0</p>
+            </div>
+            <div class="computer-score">
+                <h2>Computer</h2>
+                <p id="computer-score">0</p>
+            </div>
+
+        </div>
+        
+        <div class="game-options">
+            <button class="option-btn" id="paper-btn">
+                <img src="public/images/hand.png" alt="Rock ✊">
+            </button>
+            <button class="option-btn" id="rock-btn">
+                <img src="public/images/hand-paper.png" alt=" Paper ✋ ">
+            </button>
+            <button class="option-btn" id="scissors-btn">
+                <img src="public/images/scissors.png" alt="Scissors ✌️">
+            </button>
+
+        </div>
+
+        
+
+        <div class="back-btn-container">
+            <button class="back-btn" onclick="location.href='index.html'">Back to Home</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-line"></div>
+        <p>✊ ✋ ✌️ Rock Paper Scissors Game</p>
+        <p>Created by Efrata | © 2025 All Rights Reserved</p>
+        <p>
+            <a href="https://github.com/your-username" target="_blank" >GitHub</a> | 
+            <a href="mailto:youremail@example.com" >Contact</a>
+        </p>
+    </footer>
+
+</body>
+</html>
