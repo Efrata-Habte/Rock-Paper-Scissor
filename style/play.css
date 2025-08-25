@@ -1,29 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/jokerman');
 
-<<<<<<< HEAD
-*{
-    color: white;
-    line-height: 1.6;
-
-}
-
-.title h1{
-    display: flex;
-    justify-content: center;
-    margin-top: 4%;
-    font-family: "jokerman","san-serif";
-    font-size: 2rem;
-}
-
-.title p{
-    text-align: center;
-    font-size: medium;
-    margin: 2% auto;
-}
-
-
-
-=======
 /* Title Section */
 .title h1 {
   color: white;
@@ -177,4 +153,3 @@
 .hidden {
   display: none;
 }
->>>>>>> play-1
