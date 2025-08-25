@@ -1,4 +1,4 @@
-// DOM elements
+// Get elements
 const startBtn = document.getElementById("start-btn");
 const roundForm = document.getElementById("round-form");
 const roundSetup = document.getElementById("round-setup");
@@ -15,99 +15,82 @@ let playerScore = 0;
 let computerScore = 0;
 let roundsPlayed = 0;
 
-// 🎯 Start Game
-startBtn.addEventListener("click", () => {
-  const selectedRounds = roundForm.querySelector("input[name='rounds']:checked");
-
-  if (!selectedRounds) {
-    alert("Please select the number of rounds to play!");
+// Start game
+startBtn.onclick = function() {
+  const selected = document.querySelector("input[name='rounds']:checked");
+  if (!selected) {
+    alert("Please select rounds!");
     return;
   }
 
-  totalRounds = parseInt(selectedRounds.value);
+  totalRounds = parseInt(selected.value);
   playerScore = 0;
   computerScore = 0;
   roundsPlayed = 0;
 
-  // Reset UI
-  playerScoreEl.textContent = "0";
-  computerScoreEl.textContent = "0";
+  playerScoreEl.textContent = 0;
+  computerScoreEl.textContent = 0;
   resultEl.textContent = "Game started! Choose Rock, Paper, or Scissors.";
-  restartBtn.classList.add("hidden");
 
-  // Show game, hide setup
-  roundSetup.classList.add("hidden");
-  gameArea.classList.remove("hidden");
-});
+  roundSetup.style.display = "none";
+  gameArea.style.display = "block";
+}
 
-// 🎲 Computer random choice
+// Random computer choice
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
   return choices[Math.floor(Math.random() * 3)];
 }
 
-// 🏆 Play one round
+// Play one round
 function playRound(playerChoice) {
-  if (roundsPlayed >= totalRounds) return; // stop if game is over
-
   const computerChoice = getComputerChoice();
-  let roundResult = "";
+  let message = "";
 
   if (playerChoice === computerChoice) {
-    roundResult = `It's a tie! You both chose ${playerChoice}.`;
+    message = "It's a tie! Both chose " + playerChoice;
   } else if (
     (playerChoice === "rock" && computerChoice === "scissors") ||
     (playerChoice === "paper" && computerChoice === "rock") ||
     (playerChoice === "scissors" && computerChoice === "paper")
   ) {
     playerScore++;
-    roundResult = `You win! ${playerChoice} beats ${computerChoice}.`;
+    message = "You win! " + playerChoice + " beats " + computerChoice;
   } else {
     computerScore++;
-    roundResult = `Computer wins! ${computerChoice} beats ${playerChoice}.`;
+    message = "Computer wins! " + computerChoice + " beats " + playerChoice;
   }
 
   roundsPlayed++;
-
-  // Update scores
   playerScoreEl.textContent = playerScore;
   computerScoreEl.textContent = computerScore;
+  resultEl.textContent = message + " (" + roundsPlayed + "/" + totalRounds + ")";
 
-  // Show result
-  resultEl.textContent = `${roundResult} (Round ${roundsPlayed}/${totalRounds})`;
-
-  // End game if finished
   if (roundsPlayed === totalRounds) {
     endGame();
   }
 }
 
-// 🎮 End Game
+// End game
 function endGame() {
-  let finalMessage = "";
+  let finalMsg = "";
+  if (playerScore > computerScore) finalMsg = "You won the game!";
+  else if (playerScore < computerScore) finalMsg = "Computer won the game!";
+  else finalMsg = "It's a draw!";
 
-  if (playerScore > computerScore) {
-    finalMessage = `🎉 You won the game! Final Score: ${playerScore} - ${computerScore}`;
-  } else if (playerScore < computerScore) {
-    finalMessage = `💻 Computer won the game! Final Score: ${computerScore} - ${playerScore}`;
-  } else {
-    finalMessage = `🤝 It's a draw! Final Score: ${playerScore} - ${computerScore}`;
-  }
-
-  resultEl.textContent = finalMessage;
-  restartBtn.classList.remove("hidden");
+  resultEl.textContent = finalMsg + " Final score: You " + playerScore + " - Computer " + computerScore;
+  restartBtn.style.display = "inline-block";
 }
 
-// 🔁 Restart Game
-restartBtn.addEventListener("click", () => {
-  roundSetup.classList.remove("hidden");
-  gameArea.classList.add("hidden");
-});
+// Restart
+restartBtn.onclick = function() {
+  roundSetup.style.display = "block";
+  gameArea.style.display = "none";
+}
 
-// 🎯 Player clicks Rock / Paper / Scissors
-optionBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const playerChoice = btn.getAttribute("data-choice");
-    playRound(playerChoice);
-  });
+// Player buttons
+optionBtns.forEach(function(btn) {
+  btn.onclick = function() {
+    playRound(btn.getAttribute("data-choice"));
+  }
 });
