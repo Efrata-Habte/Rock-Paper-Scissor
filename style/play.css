@@ -1,5 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/jokerman');
 
+<<<<<<< HEAD
 *{
     color: white;
     line-height: 1.6;
@@ -22,3 +23,158 @@
 
 
 
+=======
+/* Title Section */
+.title h1 {
+  color: white;
+  font-family: 'Jokerman', sans-serif;
+  font-size: 2.8rem;
+  text-align: center;
+  margin: 5% 0 1% 0;
+}
+
+.title p {
+  color: #ddd;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2%;
+}
+
+/* Game Container */
+.container {
+  width: 70%;
+  margin: 2% auto;
+  padding: 20px;
+  background: rgba(0, 195, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  color: white;
+}
+
+/* Round Selection */
+.round-setup p {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+#round-form label {
+  margin: 0 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#start-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 15px;
+  border: 2px solid #394384;
+  background: linear-gradient(#2e3891, #4a5cd3);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#start-btn:hover {
+  transform: scale(1.05);
+  background: rgb(67, 67, 186);
+}
+
+/* Scoreboard */
+.score-board {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.score h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.score p {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FFD700; /* golden score */
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+/* Game Options */
+.game-options {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 25px 0;
+}
+
+.option-btn {
+  background: linear-gradient(#7A87DF, #808FEF);
+  border: 3px solid #394384;
+  border-radius: 20px;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.option-btn:hover {
+  transform: scale(1.1);
+  background: rgb(67, 67, 186);
+}
+
+.option-btn img {
+  width: 80px;
+  height: 80px;
+}
+
+.option-btn span {
+  display: block;
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+/* Result Display */
+.result {
+  margin: 20px auto;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  font-size: 1.3rem;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+/* Controls */
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.controls button {
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: 2px solid #394384;
+  background: linear-gradient(#2e3891, #4a5cd3);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.controls button:hover {
+  transform: scale(1.05);
+  background: rgb(67, 67, 186);
+}
+
+/* Utility */
+.hidden {
+  display: none;
+}
+>>>>>>> play-1

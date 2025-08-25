@@ -33,10 +33,10 @@
     font-weight: bold; 
     background: linear-gradient(#7A87DF, #808FEF);
     box-shadow:  0px 4px 4px rgba(255, 255, 255, 0.1);
-    transition: transform ease-in-out 0.3s;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .menu:hover{
-    transform: scale(1.05);
-    background:rgb(67, 67, 186);
+    transform: scale(1.1);
+    background: rgb(67, 67, 186);
 }
