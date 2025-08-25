@@ -1,71 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style/common.css">
-    <link rel="stylesheet" href="style/play.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style/common.css">
+  <link rel="stylesheet" href="style/play.css">
 </head>
 <body>
+  <section class="container">
     
-    <section class="container">
-        <div class="title">
-            <h1>Rock, Paper, Scissors</h1>
-            <p>Make your choice and play against the computer!</p>
+    <!-- Title -->
+    <header class="title">
+      <h1>✊ ✋ ✌️ Rock, Paper, Scissors</h1>
+      <p>Challenge the computer and see who wins!</p>
+    </header>
 
+    <!-- Round Selection -->
+    <div class="round-setup" id="round-setup">
+      <p>Select the number of rounds:</p>
+      <form id="round-form">
+        <label><input type="radio" name="rounds" value="3" required> 3</label>
+        <label><input type="radio" name="rounds" value="5"> 5</label>
+        <label><input type="radio" name="rounds" value="7"> 7</label>
+      </form>
+      <button id="start-btn">Start Game</button>
+    </div>
+
+    <!-- Game Area -->
+    <div class="game-area hidden" id="game-area">
+      
+      <!-- Scoreboard -->
+      <div class="score-board">
+        <div class="score player">
+          <h2>You</h2>
+          <p id="player-score">0</p>
         </div>
-
-        <div class="round-info">
-            <p>How many rounds you want to play? </p>
-            <form action="">
-                <input type="radio" name="" value="3"> 3
-                <input type="radio" name="" value="5"> 5
-                <input type="radio" name="" value="7"> 7
-            </form>
+        <div class="score computer">
+          <h2>Computer</h2>
+          <p id="computer-score">0</p>
         </div>
+      </div>
 
-        <div class="score-board">
-            <div class="player-score">
-                <h2>You</h2>
-                <p id="player-score">0</p>
-            </div>
-            <div class="computer-score">
-                <h2>Computer</h2>
-                <p id="computer-score">0</p>
-            </div>
+      <!-- Game Options -->
+      <div class="game-options">
+        <button class="option-btn" data-choice="rock">
+          <img src="public/images/hand.png" alt="Rock">
+          <span>Rock</span>
+        </button>
+        <button class="option-btn" data-choice="paper">
+          <img src="public/images/hand-paper.png" alt="Paper">
+          <span>Paper</span>
+        </button>
+        <button class="option-btn" data-choice="scissors">
+          <img src="public/images/scissors.png" alt="Scissors">
+          <span>Scissors</span>
+        </button>
+      </div>
 
-        </div>
-        
-        <div class="game-options">
-            <button class="option-btn" id="paper-btn">
-                <img src="public/images/hand.png" alt="Rock ✊">
-            </button>
-            <button class="option-btn" id="rock-btn">
-                <img src="public/images/hand-paper.png" alt=" Paper ✋ ">
-            </button>
-            <button class="option-btn" id="scissors-btn">
-                <img src="public/images/scissors.png" alt="Scissors ✌️">
-            </button>
+      <!-- Result Display -->
+      <div class="result">
+        <p id="round-result">Choose Rock, Paper, or Scissors to begin!</p>
+      </div>
 
-        </div>
+      <!-- Game Controls -->
+      <div class="controls">
+        <button id="restart-btn" class="hidden">Restart Game</button>
+        <button class="back-btn" onclick="location.href='index.html'">Back to Home</button>
+      </div>
+    </div>
+    
+  </section>
 
-        
+  <!-- Footer -->
+  <footer>
+    <div class="footer-line"></div>
+    <p>✊ ✋ ✌️ Rock Paper Scissors Game</p>
+    <p>Created by Efrata | © 2025 All Rights Reserved</p>
+    <p>
+      <a href="https://github.com/your-username" target="_blank">GitHub</a> | 
+      <a href="mailto:youremail@example.com">Contact</a>
+    </p>
+  </footer>
 
-        <div class="back-btn-container">
-            <button class="back-btn" onclick="location.href='index.html'">Back to Home</button>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-line"></div>
-        <p>✊ ✋ ✌️ Rock Paper Scissors Game</p>
-        <p>Created by Efrata | © 2025 All Rights Reserved</p>
-        <p>
-            <a href="https://github.com/your-username" target="_blank" >GitHub</a> | 
-            <a href="mailto:youremail@example.com" >Contact</a>
-        </p>
-    </footer>
-
+  <!-- Script -->
+  <script src="script/game.js"></script>
 </body>
 </html>
